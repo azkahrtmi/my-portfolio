@@ -2,15 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 
-export default function TypingLogo() {
-  const firstText = "Azka."; // teks pertama
-  const finalText = "Azka.Hartami"; // teks akhir
+type TypingLogoProps = {
+  firstText: string; // teks pertama
+  finalText: string; // teks akhir
+};
 
-  const [displayText, setDisplayText] = useState(""); // apa yg ditampilkan
+export default function TypingLogo({ firstText, finalText }: TypingLogoProps) {
+  const [displayText, setDisplayText] = useState(""); // teks yg tampil
   const [phase, setPhase] = useState<
     "typing1" | "deleting" | "typing2" | "done"
-  >("typing1"); // fase animasi
-  const [index, setIndex] = useState(0); // posisi huruf sekarang
+  >("typing1");
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -19,14 +21,14 @@ export default function TypingLogo() {
     if (phase === "typing1") {
       if (index < firstText.length) {
         timeout = setTimeout(() => {
-          setDisplayText(firstText.slice(0, index + 1)); // tambah huruf
+          setDisplayText(firstText.slice(0, index + 1));
           setIndex(index + 1);
         }, 200);
       } else {
         timeout = setTimeout(() => {
-          setPhase("deleting"); // lanjut ke hapus
+          setPhase("deleting");
           setIndex(firstText.length);
-        }, 800); // jeda sebentar
+        }, 800);
       }
     }
 
@@ -34,16 +36,16 @@ export default function TypingLogo() {
     if (phase === "deleting") {
       if (index > 0) {
         timeout = setTimeout(() => {
-          setDisplayText(firstText.slice(0, index - 1)); // hapus huruf
+          setDisplayText(firstText.slice(0, index - 1));
           setIndex(index - 1);
         }, 100);
       } else {
-        setPhase("typing2"); // lanjut ketik teks kedua
+        setPhase("typing2");
         setIndex(0);
       }
     }
 
-    // fase ketik teks kedua (final)
+    // fase ketik teks kedua
     if (phase === "typing2") {
       if (index < finalText.length) {
         timeout = setTimeout(() => {
@@ -51,17 +53,17 @@ export default function TypingLogo() {
           setIndex(index + 1);
         }, 200);
       } else {
-        setPhase("done"); // selesai
+        setPhase("done");
       }
     }
 
-    return () => clearTimeout(timeout); // bersihin timeout tiap update
-  }, [index, phase]);
+    return () => clearTimeout(timeout);
+  }, [index, phase, firstText, finalText]);
 
   return (
     <span className="text-white text-2xl md:text-4xl font-extrabold tracking-wide">
       {displayText}
-      <span className="animate-blink">|</span> {/* cursor blink */}
+      <span className="animate-blink">|</span>
     </span>
   );
 }

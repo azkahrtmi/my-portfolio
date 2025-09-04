@@ -2,9 +2,9 @@ import TypingLogo from "./TypingLogo";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black flex h-20 md:h-24 justify-between items-center px-6 md:px-16 shadow-md">
+    <nav className="bg-black flex h-20 md:h-24 justify-between items-center px-6 md:px-16 shadow-md fixed top-0 w-full">
       {/* Logo */}
-      <TypingLogo />
+      <TypingLogo firstText="Azka." finalText="Azka.Hartami" />
 
       {/* Menu - tampil di md ke atas */}
       <div className="hidden md:flex gap-9 text-gray-300 text-lg">
