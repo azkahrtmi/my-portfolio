@@ -3,14 +3,17 @@
 body {
   background: #0a0a0a;
   margin: 0;
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
+  color: white;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
 }
 
 @keyframes blink {

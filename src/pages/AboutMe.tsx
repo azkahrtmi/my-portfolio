@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TypingLogo from "./TypingLogo";
+import TypingLogo from "../components/TypingLogo";
 import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export default function AboutMe() {
@@ -23,7 +23,7 @@ export default function AboutMe() {
           <span className="text-green-400 text-sm font-semibold">
             ● AVAILABLE FOR HIRE
           </span>
-          <TypingLogo firstText="Azka" finalText="Azka Hartami" />
+          <TypingLogo firstText="Azun" finalText="Azka Hartami" />
         </div>
       </div>
 
