@@ -34,9 +34,9 @@ export default function LeftItem() {
               <span>{skill.name}</span>
               <span>{skill.percent}%</span>
             </div>
-            <div className="w-full bg-gray-700 h-1 rounded">
+            <div className="w-full bg-gray-700 h-0.5 rounded">
               <div
-                className="bg-gray-300 h-1 rounded"
+                className="bg-gray-300 h-0.5 rounded"
                 style={{ width: `${skill.percent}%` }}
               ></div>
             </div>
