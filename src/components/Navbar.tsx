@@ -2,7 +2,7 @@ import TypingLogo from "./TypingLogo";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black flex h-20 md:h-24 justify-between items-center px-6 md:px-16 shadow-md fixed top-0 w-full">
+    <nav className="bg-black/30 backdrop-blur flex h-20 md:h-24 justify-between items-center px-6 md:px-16 shadow-md fixed top-0 w-full">
       {/* Logo */}
       <TypingLogo firstText="Azun." finalText="Azka.Hartami" />
 

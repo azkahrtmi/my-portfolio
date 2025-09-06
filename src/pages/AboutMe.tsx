@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TypingLogo from "../components/TypingLogo";
-import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa6";
+import Info from "@/components/About Me/Info";
+import Connect from "@/components/About Me/Connect";
 
 export default function AboutMe() {
   return (
@@ -28,32 +29,7 @@ export default function AboutMe() {
       </div>
 
       {/* Info tambahan */}
-      <div className="flex sm:flex-row flex-wrap gap-16 justify-center items-center">
-        <div className="group flex items-center gap-2 cursor-pointer text-gray-400">
-          <div className="bg-black rounded-sm p-1 w-6 h-6 flex items-center justify-center transition-colors group-hover:bg-white">
-            🌏
-          </div>
-          <span className="transition-colors group-hover:text-white">
-            Riau, Indonesia
-          </span>
-        </div>
-        <div className="group flex items-center gap-2 cursor-pointer text-gray-400">
-          <div className="bg-black rounded-sm p-1 w-6 h-6 flex items-center justify-center transition-colors group-hover:bg-white">
-            💬
-          </div>
-          <span className="transition-colors group-hover:text-white">
-            Bahasa, English
-          </span>
-        </div>
-        <div className="group flex items-center gap-2 cursor-pointer text-gray-400">
-          <div className="bg-black rounded-sm p-1 w-6 h-6 flex items-center justify-center transition-colors group-hover:bg-white">
-            💻
-          </div>
-          <span className="transition-colors group-hover:text-white">
-            Software Engineer
-          </span>
-        </div>
-      </div>
+      <Info />
 
       {/* Garis */}
       <hr className="my-4 border-gray-700" />
@@ -77,52 +53,7 @@ export default function AboutMe() {
         </div>
 
         {/* Connect */}
-        <div className="flex-1">
-          <h2 className="font-bold mb-3 text-2xl md:text-3xl bg-gradient-to-r from-white to-gray-700 bg-clip-text text-transparent">
-            CONNECT
-          </h2>
-          <div className="flex flex-col gap-3">
-            <a
-              href="https://www.facebook.com/fhioioaf/"
-              target="_blank"
-              className="bg-[#1a1a1a] p-4 rounded-lg flex items-center justify-between hover:bg-black text-xl md:text-2xl w-full transition-all duration-200 hover:translate-x-2"
-            >
-              <div className="flex items-center gap-3">
-                <FaFacebook className="text-2xl md:text-3xl" />
-                <span className="font-medium">Facebook</span>
-              </div>
-              <span className="text-sm md:text-lg text-gray-300">
-                Azka Hartami
-              </span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/azka-hartami/"
-              target="_blank"
-              className="bg-[#1a1a1a] p-4 rounded-lg flex items-center justify-between hover:bg-black text-xl md:text-2xl w-full transition-all duration-200 hover:translate-x-2"
-            >
-              <div className="flex items-center gap-3">
-                <FaLinkedin className="text-2xl md:text-3xl" />
-                <span className="font-medium">LinkedIn</span>
-              </div>
-              <span className="text-sm md:text-lg text-gray-300">
-                Azka Hartami
-              </span>
-            </a>
-            <a
-              href="https://github.com/azkahrtmi"
-              target="_blank"
-              className="bg-[#1a1a1a] p-4 rounded-lg flex items-center justify-between hover:bg-black text-xl md:text-2xl w-full transition-all duration-200 hover:translate-x-2"
-            >
-              <div className="flex items-center gap-3">
-                <FaGithub className="text-2xl md:text-3xl" />
-                <span className="font-medium">GitHub</span>
-              </div>
-              <span className="text-sm md:text-lg text-gray-300">
-                azkahrtmi
-              </span>
-            </a>
-          </div>
-        </div>
+        <Connect />
       </div>
     </div>
   );
